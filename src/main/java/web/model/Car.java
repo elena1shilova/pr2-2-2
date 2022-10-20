@@ -1,9 +1,19 @@
 package web.model;
 
 public class Car {
+
+    private int id;
     private String name;
     private String series;
-    private int number;
+
+    public Car() {
+    }
+
+    public Car(int number, String name, String series) {
+        this.name = name;
+        this.series = series;
+        this.id = number;
+    }
 
     public String getName() {
         return name;
@@ -21,11 +31,11 @@ public class Car {
         this.series = series;
     }
 
-    public int getNumber() {
-        return number;
+    public int getId() {
+        return id;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setId(int number) {
+        this.id = number;
     }
 }
