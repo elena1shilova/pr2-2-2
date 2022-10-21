@@ -21,14 +21,14 @@ public class CarServiceImpl implements CarService{
 
     public List<Car> printCar(int id) {
         List<Car> carsId = new ArrayList<>();
-        if(id<0||id>5) {
-            for (int i = 0; i < 5; i++) {
-                carsId.add(car.get(i));
-            }
+        int count = 0;
+        if(id<=0||id>5) {
+            count = 5;
         } else {
-            for (int i = 0; i < id; i++) {
-                carsId.add(car.get(i));
-            }
+            count = id;
+        }
+        for (int i = 0; i < count; i++) {
+            carsId.add(car.get(i));
         }
         return carsId;
     }
