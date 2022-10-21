@@ -14,7 +14,6 @@ import web.service.CarServiceImpl;
 import java.util.ArrayList;
 import java.util.List;
 @Controller
-//@RequestMapping(value = "/cars")
 public class CarController {
 
     private final CarServiceImpl carSer;
@@ -23,19 +22,9 @@ public class CarController {
         this.carSer = carSer;
     }
     @GetMapping("/cars")
-    public String printCar(@RequestParam(defaultValue = "5") int count, ModelMap model) {
-        List<Car> car = carSer.show(count);
+    public String printCarNew(@RequestParam(defaultValue = "5") int count, ModelMap model) {
+        List<Car> car = carSer.printCar(count);
         model.addAttribute("cars", car);
         return "cars";
     }
-    /*@GetMapping()
-    public String printCar(ModelMap model) {
-        model.addAttribute("cars", carSer.printCar());
-        return "cars";
-    }
-    @GetMapping(value = "?count={count}") //?count={id}
-    public String printWelcome1(@PathVariable("count") int count, ModelMap model) {
-        model.addAttribute("carsId", carSer.show(count));
-        return "carsCount";
-}*/
 }

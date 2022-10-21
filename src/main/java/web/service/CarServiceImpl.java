@@ -19,12 +19,11 @@ public class CarServiceImpl implements CarService{
         car.add(new Car(++CAR_COUNT, "Opel Astra", "F"));
     }
 
-    public List<Car> printCar() {
-        return car;
-    }
 
-    public List<Car> show(int id) {
+
+    public List<Car> printCar(int id) {
         List<Car> carsId = new ArrayList<>();
+
         for (int i = 0; i < id; i++) {
             carsId.add(car.get(i));
         }
