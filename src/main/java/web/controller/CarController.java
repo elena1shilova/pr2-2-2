@@ -32,7 +32,7 @@ public class CarController {
     }
     @GetMapping(value = "/{id}") //?count={id}
     public String printWelcome1(@PathVariable("id") int id, ModelMap model) {
-        model.addAttribute("caar", carSer.show(id));
-        return "cars";
+        model.addAttribute("cars", carSer.show(id));
+        return "carsCount";
 }
 }
