@@ -7,5 +7,5 @@ import java.util.List;
 public interface CarService {
     public List<Car> printCar();
 
-    public Car show(int id);
+    public List<Car> show(int id);
 }

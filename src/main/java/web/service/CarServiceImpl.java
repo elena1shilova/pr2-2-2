@@ -23,7 +23,11 @@ public class CarServiceImpl implements CarService{
         return car;
     }
 
-    public Car show(int id) {
-        return car.stream().filter(car -> car.getId() == id).findAny().orElse(null);
+    public List<Car> show(int id) {
+        List<Car> carsId = new ArrayList<>();
+        for (int i = 0; i < id; i++) {
+            carsId.add(car.get(i));
+        }
+        return carsId;
     }
 }
